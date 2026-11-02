@@ -76,7 +76,12 @@ body {
 .banner__buttons .button--secondary:hover { background: #F3ECE1; color: #241A14; }
 @media screen and (max-width: 749px) {
   .banner__media img { object-position: 50% 30%; }
-  .banner__content { padding-bottom: 3rem; }
+  .banner__content { padding-bottom: 2.4rem; }
+  .banner__media::after {
+    background:
+      linear-gradient(to top, rgba(20,13,9,.96) 0%, rgba(20,13,9,.86) 30%, rgba(20,13,9,.42) 58%, rgba(20,13,9,.05) 82%);
+  }
+  .banner__heading { text-shadow: 0 1px 18px rgba(0,0,0,.55); }
 }
 .banner__heading { color: #F3ECE1; }
 .page-width { padding-left: 5rem; padding-right: 5rem; }
