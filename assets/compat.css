@@ -333,7 +333,7 @@ em.girly { font-family: var(--font-girly); font-style: italic; font-weight: 400;
 
 /* annonce : bande rose, cerise de sa bio */
 .announcement-bar { background: rgb(var(--rose)) !important; color: rgb(var(--ink)) !important; }
-.announcement-bar__message { display: flex; align-items: center; justify-content: center; gap: .8rem; color: rgb(var(--ink)); font-weight: 500; }
+.announcement-bar__message { display: flex; align-items: center; justify-content: center; gap: .8rem; color: rgb(var(--ink)); font-weight: 500; margin-inline: auto; }
 .cherry { flex: 0 0 auto; color: rgb(var(--rose-deep)); }
 
 /* hero : dégradé fondu dans le fond de page */
