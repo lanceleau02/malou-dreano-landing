@@ -81,7 +81,12 @@ body {
     background:
       linear-gradient(to top, rgba(20,13,9,.97) 0%, rgba(20,13,9,.93) 26%, rgba(20,13,9,.78) 46%, rgba(20,13,9,.45) 68%, rgba(20,13,9,.08) 90%);
   }
-  .banner__heading { text-shadow: 0 1px 18px rgba(0,0,0,.55); font-size: clamp(2.2rem, 7vw, 3.2rem) !important; }
+  .banner__heading { font-size: clamp(2.2rem, 7vw, 3.2rem) !important; }
+  /* équivalent du "show_text_box" de Dawn : un fond derrière le texte, uniquement en mobile */
+  .banner__box {
+    background: linear-gradient(to top, rgba(20,13,9,.94), rgba(20,13,9,.62)) !important;
+    padding: 2rem 1.8rem !important; max-width: 100%; backdrop-filter: blur(2px);
+  }
 }
 .banner__heading { color: #F3ECE1; }
 .page-width { padding-left: 5rem; padding-right: 5rem; }
