@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malou Dreano — Programmes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,300..500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9DFD1;
+    --paper-2:#F3ECE1;
+    --paper-3:#DDD0BE;
+    --ink:#241A14;
+    --ink-2:#4B3A2F;
+    --muted:#6B584A;
+    --rust:#9E3B1F;
+    --line:rgba(36,26,20,.2);
+    --line-soft:rgba(36,26,20,.1);
+    --g:clamp(18px,4.2vw,56px);
+    --w:1320px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Archivo",system-ui,sans-serif;font-weight:400;
+    font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--rust);color:var(--paper-2)}
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--rust);outline-offset:4px}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 var(--g)}
+  .label{
+    font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);
+  }
+  .disp{
+    font-family:"Archivo",sans-serif;font-weight:700;
+    letter-spacing:-.035em;line-height:.92;text-transform:uppercase;
+    margin:0;
+  }
+
+  /* ---------- header : l'index du site ---------- */
+  header{
+    position:sticky;top:0;z-index:60;background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;height:62px;gap:clamp(14px,3vw,34px)}
+  .mark{
+    font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .mark i{font-style:normal;color:var(--rust)}
+  .idx{display:flex;gap:clamp(12px,2.4vw,28px);margin-left:auto;align-items:center}
+  .idx a{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
+    display:flex;gap:7px;align-items:baseline;padding:6px 0;
+    border-bottom:1px solid transparent;transition:border-color .2s,color .2s;
+  }
+  .idx a b{font-weight:400;color:var(--muted);font-size:10px}
+  .idx a:hover{color:var(--ink);border-color:var(--ink)}
+  .bag{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    border-left:1px solid var(--line);padding-left:clamp(12px,2vw,24px);
+  }
+  .bag span{color:var(--rust)}
+  .burger{
+    appearance:none;background:none;border:0;padding:10px 0;cursor:pointer;
+    display:none;flex-direction:column;gap:4px;width:26px;
+  }
+  .burger i{display:block;height:1.5px;background:var(--ink)}
+  .burger i:last-child{width:66%}
+
+  /* ---------- panneau latéral ---------- */
+  .scrim{
+    position:fixed;inset:0;background:rgba(36,26,20,.4);z-index:70;
+    opacity:0;pointer-events:none;transition:opacity .3s;
+  }
+  .scrim.on{opacity:1;pointer-events:auto}
+  .panel{
+    position:fixed;top:0;left:0;bottom:0;width:min(440px,92vw);z-index:75;
+    background:var(--paper-2);border-right:1px solid var(--line);
+    transform:translateX(-101%);transition:transform .36s cubic-bezier(.32,0,.06,1);
+    display:flex;flex-direction:column;padding:26px clamp(22px,4vw,38px) 24px;
+  }
+  .panel.on{transform:none}
+  .panel .phead{display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(30px,6vw,58px)}
+  .panel .phead .label{color:var(--rust)}
+  .close{
+    appearance:none;background:none;border:1px solid var(--line);cursor:pointer;
+    width:34px;height:34px;display:grid;place-items:center;color:var(--ink);
+    font-size:15px;line-height:1;
+  }
+  .panel nav{margin-bottom:auto}
+  .panel nav a{
+    display:flex;align-items:baseline;gap:14px;padding:16px 0;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .panel nav a b{
+    font-size:10px;font-weight:500;letter-spacing:.12em;color:var(--rust);
+    min-width:22px;
+  }
+  .panel nav a span{
+    font-size:clamp(22px,4.4vw,30px);font-weight:700;letter-spacing:-.03em;
+    text-transform:uppercase;line-height:1;transition:color .2s;
+  }
+  .panel nav a:hover span{color:var(--rust)}
+  .panel .pfoot{border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--muted);line-height:1.9}
+  .panel .pfoot a{border-bottom:1px solid var(--line)}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(40px,6vw,76px) 0 clamp(18px,2.4vw,28px)}
+  .hero-grid{display:grid;grid-template-columns:1fr 300px;gap:clamp(26px,5vw,64px);align-items:start}
+  .hero h1{font-size:clamp(38px,7.4vw,112px)}
+  .hero h1 em{
+    font-family:"Newsreader",serif;font-style:italic;font-weight:400;
+    text-transform:none;letter-spacing:-.02em;
+  }
+  .hero h1 .r{color:var(--rust)}
+  .hero .sub{
+    margin:clamp(22px,3vw,34px) 0 0;max-width:44ch;font-size:clamp(15px,1.5vw,17.5px);
+    color:var(--ink-2);line-height:1.6;
+  }
+  .hero .sub strong{font-weight:600;color:var(--ink)}
+  .go{
+    display:inline-flex;align-items:center;gap:12px;margin-top:clamp(24px,3vw,34px);
+    font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    padding-bottom:6px;border-bottom:1.5px solid var(--ink);
+  }
+  .go span{transition:transform .25s ease}
+  .go:hover span{transform:translateX(5px)}
+  .aside{
+    border-top:1.5px solid var(--ink);padding-top:14px;margin-top:8px;
+  }
+  .aside dl{margin:0;font-size:12.5px;line-height:1.5}
+  .aside dt{
+    font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);margin:16px 0 3px;
+  }
+  .aside dt:first-child{margin-top:0}
+  .aside dd{margin:0;color:var(--ink-2)}
+
+  /* ---------- bandeau specs ---------- */
+  .specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(30px,5vw,60px)}
+  .specs .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-top:14px;padding-bottom:14px}
+  .specs div{
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
+    padding-left:clamp(10px,2vw,22px);border-left:1px solid var(--line);
+  }
+  .specs div:first-child{padding-left:0;border-left:0}
+
+  /* ---------- titres de section ---------- */
+  .sechead{display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(26px,4vw,44px)}
+  .sechead .n{font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--rust)}
+  .sechead h2{
+    font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    margin:0;color:var(--ink);white-space:nowrap;
+  }
+  .sechead .rule{flex:1;height:1px;background:var(--line);position:relative;top:-3px}
+
+  /* ---------- 01 programme ---------- */
+  .prod{padding:clamp(48px,7vw,96px) 0 0}
+  .prod-grid{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:clamp(28px,5vw,72px)}
+  .cover{
+    aspect-ratio:3/4;background:var(--ink);color:var(--paper-2);
+    padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;
+    position:relative;border:1px solid var(--ink);
+    box-shadow:0 1px 0 rgba(36,26,20,.5);
+  }
+  .cover .kick{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#B9A692}
+  .cover .ct{
+    font-family:"Archivo",sans-serif;font-weight:700;text-transform:uppercase;
+    font-size:clamp(30px,4.6vw,50px);line-height:.94;letter-spacing:-.03em;
+    margin-top:auto;
+  }
+  .cover .ct em{font-family:"Newsreader",serif;font-style:italic;font-weight:400;text-transform:none}
+  .cover .foot{
+    margin-top:auto;padding-top:18px;border-top:1px solid rgba(243,236,225,.22);
+    display:flex;justify-content:space-between;font-size:9.5px;letter-spacing:.18em;
+    text-transform:uppercase;color:#B9A692;
+  }
+  .cover::before{
+    content:"";position:absolute;top:0;bottom:0;left:18px;width:1px;
+    background:rgba(243,236,225,.28);pointer-events:none;
+  }
+  .prod h3{
+    font-size:clamp(26px,3.4vw,42px);font-weight:700;letter-spacing:-.03em;
+    line-height:1;margin:0 0 14px;text-transform:none;
+  }
+  .prod .price{
+    display:flex;align-items:baseline;gap:10px;margin-bottom:20px;
+    padding-bottom:18px;border-bottom:1px solid var(--line);
+  }
+  .prod .price b{font-family:"Newsreader",serif;font-style:italic;font-size:34px;font-weight:400}
+  .prod .price small{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .prod p{max-width:52ch;color:var(--ink-2);font-size:15.5px;margin:0 0 26px}
+  .toc{list-style:none;margin:0 0 30px;padding:0}
+  .toc li{
+    display:flex;align-items:baseline;gap:8px;padding:9px 0;
+    border-bottom:1px solid var(--line-soft);font-size:14px;
+  }
+  .toc li b{font-weight:500;font-size:10px;letter-spacing:.1em;color:var(--rust);min-width:24px}
+  .toc .lead{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-3px)}
+  .toc .pg{font-size:11px;letter-spacing:.1em;color:var(--muted);font-variant-numeric:tabular-nums}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:space-between;gap:30px;
+    background:var(--ink);color:var(--paper-2);border:0;cursor:pointer;
+    padding:17px 22px;font-family:"Archivo",sans-serif;font-size:11.5px;
+    font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    min-height:50px;transition:background .2s;
+  }
+  .btn:hover{background:var(--rust)}
+  .btn .ar{font-size:14px;letter-spacing:0}
+  .after{
+    margin-top:16px;font-size:11.5px;color:var(--muted);
+    display:flex;gap:18px;flex-wrap:wrap;
+  }
+  .next{
+    margin-top:clamp(38px,5vw,62px);padding:20px 0;border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);display:flex;justify-content:space-between;
+    align-items:baseline;gap:20px;flex-wrap:wrap;
+  }
+  .next p{margin:0;font-size:14px;color:var(--ink-2)}
+  .next a{
+    font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    border-bottom:1px solid var(--ink);padding-bottom:3px;
+  }
+
+  /* ---------- 02 histoire ---------- */
+  .story{
+    margin-top:clamp(56px,8vw,110px);background:var(--ink);color:var(--paper-2);
+    padding:clamp(50px,7vw,96px) 0;
+  }
+  .story .sechead h2{color:var(--paper-2)}
+  .story .sechead .n{color:#C87B5F}
+  .story .sechead .rule{background:rgba(243,236,225,.25)}
+  .story-grid{display:grid;grid-template-columns:repeat(12,1fr)}
+  .story-col{grid-column:4 / 11}
+  @media (max-width:900px){.story-col{grid-column:2 / 12}}
+  @media (max-width:820px){.story-col{grid-column:1 / -1}}
+  .story p{color:rgba(243,236,225,.8);font-size:15.5px;max-width:46ch;margin:0 0 18px}
+  .story p.lead{font-size:clamp(17px,1.9vw,21px);color:var(--paper-2);line-height:1.5}
+  .story blockquote{
+    margin:clamp(28px,4vw,44px) 0 0;padding:0;
+    font-family:"Newsreader",serif;font-style:italic;font-size:clamp(24px,3.2vw,40px);
+    line-height:1.15;color:var(--paper-2);
+  }
+  .story .sig{
+    margin-top:26px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#C87B5F;
+  }
+  .story .story-col{max-width:62ch}
+
+  /* ---------- 03 questions ---------- */
+  .faq{padding:clamp(56px,8vw,100px) 0 0}
+  .qa{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.6vw,34px) clamp(30px,6vw,80px)}
+  .qa div{padding-top:16px;border-top:1px solid var(--line)}
+  .qa dt{font-size:15px;font-weight:600;margin-bottom:8px;letter-spacing:-.01em}
+  .qa dd{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.6}
+
+  /* ---------- achat ---------- */
+  .buy{
+    margin-top:clamp(56px,8vw,100px);border-top:3px solid var(--ink);
+    background:var(--paper-2);padding:clamp(34px,5vw,58px) 0;
+  }
+  .buy .wrap{display:flex;align-items:center;gap:clamp(24px,5vw,60px);flex-wrap:wrap;justify-content:space-between}
+  .buy h2{
+    font-size:clamp(24px,3.2vw,40px);font-weight:700;letter-spacing:-.03em;
+    line-height:1;margin:0 0 10px;
+  }
+  .buy p{margin:0;font-size:13px;color:var(--muted)}
+  .buy .price{display:flex;align-items:baseline;gap:8px}
+  .buy .price b{font-family:"Newsreader",serif;font-style:italic;font-weight:400;font-size:clamp(34px,4.4vw,52px);line-height:1}
+  .buy .price small{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- pied ---------- */
+  footer{padding:clamp(38px,5vw,56px) 0 26px;margin-top:clamp(40px,6vw,70px)}
+  .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:26px;padding-bottom:26px;border-bottom:1px solid var(--line)}
+  .foot h4{font-size:9.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .foot ul{list-style:none;margin:0;padding:0;font-size:13px;line-height:2;color:var(--ink-2)}
+  .foot a:hover{color:var(--rust)}
+  .foot .about{font-size:13px;color:var(--ink-2);max-width:34ch;line-height:1.65}
+  .colophon{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- breakpoints ---------- */
+  @media (max-width:1040px){
+    .hero-grid{grid-template-columns:1fr}
+    .aside{max-width:420px}
+    .prod-grid{grid-template-columns:1fr}
+    .cover{max-width:340px}
+  }
+  @media (max-width:820px){
+    .idx{display:none}
+    .burger{display:flex;order:-1}
+    .bar{gap:16px}
+    .story-grid{grid-template-columns:1fr}
+    .qa{grid-template-columns:1fr}
+    .foot{grid-template-columns:1fr 1fr}
+    .foot .about{grid-column:1/-1}
+  }
+  @media (max-width:560px){
+    :root{--g:18px}
+    .hero h1{font-size:clamp(30px,10.2vw,44px)}
+    .specs .wrap{grid-template-columns:1fr;gap:8px;padding-top:12px;padding-bottom:12px}
+    .specs div{border-left:0;padding-left:0;border-top:1px solid var(--line-soft);padding-top:8px}
+    .specs div:first-child{border-top:0;padding-top:0}
+    .bag{display:none}
+    .buy .wrap{gap:22px}
+    .btn{width:100%;gap:20px}
+    .toc li{font-size:13px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <button class="burger" id="burger" aria-label="Ouvrir le sommaire" aria-expanded="false" aria-controls="panel">
+      <i></i><i></i><i></i>
+    </button>
+    <a class="mark" href="#top">Malou Dreano<i>.</i></a>
+    <nav class="idx" aria-label="Sommaire">
+      <a href="#programme"><b>01</b> Le programme</a>
+      <a href="#histoire"><b>02</b> Mon histoire</a>
+      <a href="#questions"><b>03</b> Questions</a>
+    </nav>
+    <a class="bag" href="#acheter">Panier <span>00</span></a>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" aria-hidden="true" aria-label="Sommaire">
+  <div class="phead">
+    <span class="label">Sommaire</span>
+    <button class="close" id="close" aria-label="Fermer">&times;</button>
+  </div>
+  <nav>
+    <a href="#programme"><b>01</b><span>Le programme</span></a>
+    <a href="#histoire"><b>02</b><span>Mon histoire</span></a>
+    <a href="#questions"><b>03</b><span>Questions</span></a>
+    <a href="#acheter"><b>04</b><span>Acheter</span></a>
+  </nav>
+  <div class="pfoot">
+    <a href="https://www.instagram.com/mldreano/" target="_blank" rel="noopener">@mldreano</a><br>
+    <a href="https://linktr.ee/mldreano" target="_blank" rel="noopener">linktr.ee/mldreano</a><br>
+    Codes MALOU10 — AYBL &amp; Lifepro
+  </div>
+</aside>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="disp">Comprendre<br>son corps<br><span class="r">avant</span> de<br><em>le travailler</em>.</h1>
+        <p class="sub">Huit semaines de séances structurées, expliquées exercice par exercice. Pas un programme de plus à abandonner en février : <strong>une méthode que tu peux suivre seule</strong>, à la salle comme chez toi.</p>
+        <a class="go" href="#programme">Voir le programme <span>&rarr;</span></a>
+      </div>
+      <div class="aside">
+        <dl>
+          <dt>Format</dt>
+          <dd>PDF, téléchargé après le paiement</dd>
+          <dt>Durée</dt>
+          <dd>8 semaines, 3 séances par semaine</dd>
+          <dt>Niveau</dt>
+          <dd>Débutante à intermédiaire</dd>
+          <dt>Matériel</dt>
+          <dd>Salle complète ou haltères seuls</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="specs">
+    <div class="wrap">
+      <div>Accès immédiat</div>
+      <div>Mises à jour incluses à vie</div>
+      <div>Écrit et testé par moi</div>
+    </div>
+  </div>
+
+  <!-- 01 -->
+  <section class="prod" id="programme">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="n">01</span><h2>Le programme</h2><span class="rule"></span>
+      </div>
+
+      <div class="prod-grid">
+        <div class="cover">
+          <span class="kick">Programme · Édition 2026</span>
+          <div class="ct">Bas<br>du<br><em>corps</em></div>
+          <div class="foot"><span>Malou Dreano</span><span>08 sem.</span></div>
+        </div>
+
+        <div>
+          <h3>Le programme bas du corps</h3>
+          <div class="price"><b>24 €</b><small>PDF · 48 pages</small></div>
+          <p>Des jambes et des fessiers qui travaillent vraiment, sans passer trois heures à la salle. Chaque séance a un objectif, chaque exercice une raison d'être là — dans cet ordre précis.</p>
+
+          <ul class="toc">
+            <li><b>01</b><span>Ce qui fait grossir un muscle</span><span class="lead"></span><span class="pg">p. 04</span></li>
+            <li><b>02</b><span>Échauffement et placement</span><span class="lead"></span><span class="pg">p. 12</span></li>
+            <li><b>03</b><span>Quadriceps et ischios</span><span class="lead"></span><span class="pg">p. 18</span></li>
+            <li><b>04</b><span>Fessiers, les trois angles</span><span class="lead"></span><span class="pg">p. 26</span></li>
+            <li><b>05</b><span>Progression, semaine par semaine</span><span class="lead"></span><span class="pg">p. 34</span></li>
+            <li><b>06</b><span>Version maison, sans machines</span><span class="lead"></span><span class="pg">p. 42</span></li>
+          </ul>
+
+          <a class="btn" href="#acheter">Ajouter au panier <span class="ar">&rarr;</span></a>
+          <div class="after"><span>Paiement sécurisé</span><span>Lien envoyé par email</span></div>
+        </div>
+      </div>
+
+      <div class="next">
+        <p><strong>Guide nutrition</strong> — en préparation. Recettes, structure d'assiette, sortie de sèche.</p>
+        <a href="#acheter">Être prévenue du lancement</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="story" id="histoire">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="n">02</span><h2>Mon histoire</h2><span class="rule"></span>
+      </div>
+      <div class="story-grid">
+        <div class="story-col">
+          <p class="lead">J'ai commencé la salle sans rien comprendre. Je recopiais les séances des autres et je changeais de programme toutes les trois semaines.</p>
+          <p>Ce qui a tout changé n'est pas une séance miracle. C'est d'avoir compris la logique : pourquoi cet exercice, dans cet ordre, à ce moment de la semaine.</p>
+          <p>Aujourd'hui je veux transmettre ça — la structure, pas la motivation.</p>
+          <blockquote>« Un programme ne sert à rien si tu ne sais pas pourquoi tu le suis. »</blockquote>
+          <p class="sig">Malou — Londres, 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="faq" id="questions">
+    <div class="wrap">
+      <div class="sechead">
+        <span class="n">03</span><h2>Questions</h2><span class="rule"></span>
+      </div>
+      <dl class="qa">
+        <div>
+          <dt>Comment je reçois le programme ?</dt>
+          <dd>Par email, juste après le paiement. Tu télécharges le PDF autant de fois que tu veux, sans limite de temps.</dd>
+        </div>
+        <div>
+          <dt>Je débute vraiment, c'est pour moi ?</dt>
+          <dd>Oui. Chaque exercice est expliqué et accompagné d'une variante plus simple, pour démarrer sans expérience.</dd>
+        </div>
+        <div>
+          <dt>Il faut du matériel ?</dt>
+          <dd>Une salle classique suffit. Une version entièrement aux haltères est incluse si tu t'entraînes chez toi.</dd>
+        </div>
+        <div>
+          <dt>Et si je suis le programme en retard ?</dt>
+          <dd>Rien ne périme. Tu avances à ton rythme, les semaines ne sont pas datées.</dd>
+        </div>
+        <div>
+          <dt>Est-ce remboursable ?</dt>
+          <dd>Pas une fois le fichier téléchargé, conformément à la réglementation sur les contenus numériques. Écris-moi si quelque chose ne va pas.</dd>
+        </div>
+        <div>
+          <dt>Le paiement est sécurisé ?</dt>
+          <dd>Carte bancaire et PayPal. Aucune donnée bancaire ne passe par ce site.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="buy" id="acheter">
+    <div class="wrap">
+      <div>
+        <h2>Le programme bas du corps</h2>
+        <p>PDF de 48 pages · accès immédiat · mises à jour à vie</p>
+      </div>
+      <div class="price"><b>24 €</b><small>TVA incluse</small></div>
+      <a class="btn" href="#acheter">Acheter <span class="ar">&rarr;</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>Malou Dreano</h4>
+        <p class="about">Programmes d'entraînement et guides nutrition, écrits pour tenir sur la durée plutôt que pour impressionner le premier mois.</p>
+      </div>
+      <div>
+        <h4>Boutique</h4>
+        <ul>
+          <li><a href="#programme">Le programme</a></li>
+          <li><a href="#questions">Questions</a></li>
+          <li><a href="#">Suivi de commande</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/mldreano/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://linktr.ee/mldreano" target="_blank" rel="noopener">Linktree</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Malou Dreano</span>
+      <span>Mentions légales · CGV · Confidentialité</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const panel = document.getElementById('panel');
+  const scrim = document.getElementById('scrim');
+  const burger = document.getElementById('burger');
+  function toggle(open){
+    panel.classList.toggle('on', open);
+    scrim.classList.toggle('on', open);
+    panel.setAttribute('aria-hidden', String(!open));
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) document.getElementById('close').focus();
+  }
+  burger.addEventListener('click', () => toggle(true));
+  document.getElementById('close').addEventListener('click', () => toggle(false));
+  scrim.addEventListener('click', () => toggle(false));
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggle(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') toggle(false); });
+</script>
+</body>
+</html>
