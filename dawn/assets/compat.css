@@ -50,7 +50,7 @@ body {
 .section-footer-padding { margin-top: 0; }
 /* Cartes produit : Dawn pilote le ratio via --ratio-percent */
 .card__inner.ratio { position: relative; width: 100%; }
-.card__inner.ratio::before { content: ''; display: block; padding-bottom: var(--ratio-percent, 133.333%); }
+.card__inner.ratio::before { content: ''; width: 0; height: 0; padding-bottom: var(--ratio-percent, 133.333%); }
 .card__inner.ratio > .card__media { position: absolute; inset: 0; width: 100%; height: 100%; }
 .badge { position: absolute; bottom: 1rem; left: 1rem; width: auto; height: auto;
          border-radius: 4rem; padding: .4rem 1.2rem; font-size: 1rem; z-index: 2; }
@@ -60,7 +60,24 @@ body {
 .card__media img, .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card__media .media { position: relative; overflow: hidden; }
 .announcement-bar { display: block; }
-.banner__box { background: transparent !important; padding: 0 !important; max-width: 68rem; }
+.banner__box { background: transparent !important; padding: 0 !important; max-width: 46rem; }
+.banner__heading { font-size: clamp(2.6rem, 4.4vw, 4.6rem) !important; line-height: 1.06; }
+.banner__media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(to top, rgba(20,13,9,.94) 0%, rgba(20,13,9,.72) 26%, rgba(20,13,9,.28) 52%, rgba(20,13,9,0) 78%),
+    linear-gradient(to right, rgba(20,13,9,.78) 0%, rgba(20,13,9,.45) 34%, rgba(20,13,9,0) 62%);
+}
+.banner__media img { object-position: 50% 42%; }
+.banner__content { padding-bottom: 5rem; }
+.banner__buttons .button--secondary {
+  color: #F3ECE1; box-shadow: 0 0 0 .1rem #F3ECE1; background: transparent;
+}
+.banner__buttons .button--secondary:hover { background: #F3ECE1; color: #241A14; }
+@media screen and (max-width: 749px) {
+  .banner__media img { object-position: 50% 30%; }
+  .banner__content { padding-bottom: 3rem; }
+}
 .banner__heading { color: #F3ECE1; }
 .page-width { padding-left: 5rem; padding-right: 5rem; }
 @media screen and (max-width: 749px) { .page-width { padding-left: 1.5rem; padding-right: 1.5rem; } }

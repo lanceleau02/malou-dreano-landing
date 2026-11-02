@@ -253,11 +253,14 @@
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     <section class="shopify-section section">
-      <div id="Banner-1" class="banner banner--content-align-center banner--content-align-mobile-center banner--large">
+      <div id="Banner-1" class="banner banner--content-align-left banner--content-align-mobile-center banner--large">
         <div class="banner__media media">
-          <img src="assets/banniere.svg?v=10" alt="" width="2000" height="1100" loading="eager">
+          <picture>
+            <source media="(max-width: 749px)" srcset="assets/banner-mobile.jpg?v=10">
+            <img src="assets/banner-desktop.jpg?v=10" alt="Malou Dreano à la salle" width="2400" height="1200" loading="eager">
+          </picture>
         </div>
-        <div class="banner__content banner__content--bottom-center page-width">
+        <div class="banner__content banner__content--bottom-left page-width">
           <div class="banner__box content-container content-container--full-width-mobile color-scheme-3 gradient">
             <h2 class="banner__heading inline-richtext h0">Comprendre son corps<br>avant de le travailler</h2>
             <div class="banner__buttons">
