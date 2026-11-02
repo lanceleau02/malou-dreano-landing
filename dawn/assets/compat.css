@@ -79,9 +79,9 @@ body {
   .banner__content { padding-bottom: 2.4rem; }
   .banner__media::after {
     background:
-      linear-gradient(to top, rgba(20,13,9,.96) 0%, rgba(20,13,9,.86) 30%, rgba(20,13,9,.42) 58%, rgba(20,13,9,.05) 82%);
+      linear-gradient(to top, rgba(20,13,9,.97) 0%, rgba(20,13,9,.93) 26%, rgba(20,13,9,.78) 46%, rgba(20,13,9,.45) 68%, rgba(20,13,9,.08) 90%);
   }
-  .banner__heading { text-shadow: 0 1px 18px rgba(0,0,0,.55); }
+  .banner__heading { text-shadow: 0 1px 18px rgba(0,0,0,.55); font-size: clamp(2.2rem, 7vw, 3.2rem) !important; }
 }
 .banner__heading { color: #F3ECE1; }
 .page-width { padding-left: 5rem; padding-right: 5rem; }
