@@ -200,3 +200,197 @@ body {
 .mob-foot { border-top: .1rem solid rgba(var(--color-foreground), .12); padding-top: 1.6rem; font-size: 1.3rem; }
 .mob-foot a { color: inherit; }
 .announcement-bar__message { text-align: center; padding: 1rem 0; margin: 0; }
+
+/* ===== Améliorations ===== */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Hero : titre équilibré, sous-titre, bouton plein */
+.banner__box { max-width: 58rem; }
+.banner__heading { text-wrap: balance; margin: 0 0 1.6rem; }
+.banner__sub { color: rgba(243,236,225,.82); font-size: 1.6rem; line-height: 1.55; margin: 0 0 2.8rem; max-width: 46rem; }
+.banner__buttons .hero-cta { background: #F3ECE1; color: #241A14; box-shadow: none; padding: 0 3.2rem; min-height: 5rem; }
+.banner__buttons .hero-cta:hover { background: #fff; }
+@media screen and (max-width: 749px) {
+  .banner__sub { font-size: 1.4rem; margin-bottom: 2rem; }
+  .banner__buttons .hero-cta { width: 100%; }
+}
+
+/* Cartes : toute la carte cliquable + léger zoom au survol */
+.card--product { position: relative; }
+.card--product .full-unstyled-link::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+.card__media img { transition: transform .5s cubic-bezier(.2,.6,.2,1); }
+.card-wrapper:hover .card__media img { transform: scale(1.035); }
+.card__heading { margin-bottom: .2rem; }
+.price-item--compare { opacity: .5; margin-right: .6rem; font-size: .9em; }
+.price-save { display: inline-block; margin-left: .6rem; padding: .1rem .8rem; border-radius: 4rem;
+  font-size: 1.1rem; letter-spacing: .04em; background: rgb(158,59,31); color: #FBF7F1; vertical-align: middle; }
+
+/* Mon histoire : CTA + respiration mobile */
+.story-cta { margin-top: 3.2rem; }
+@media screen and (max-width: 749px) {
+  #histoire .color-scheme-3 { padding: 4rem 2.4rem !important; }
+}
+
+/* FAQ en accordéon (corrige aussi les colonnes écrasées en mobile) */
+.faq-list { max-width: 80rem; border-top: .1rem solid rgba(var(--color-foreground), .15); }
+.faq-item { border-bottom: .1rem solid rgba(var(--color-foreground), .15); }
+.faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between;
+  align-items: center; gap: 2rem; padding: 2.2rem 0; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary h3 { margin: 0; font-size: 1.7rem; font-weight: 500; }
+.faq-item summary::after { content: "+"; font-size: 2.4rem; line-height: 1; font-weight: 300; transition: transform .25s; flex: 0 0 auto; }
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin: 0 0 2.4rem; max-width: 64rem; }
+.section-title-faq { padding-bottom: 6rem; }
+
+/* Footer : le filet du bas ne déborde plus des marges */
+.foot-bottom { border-top: none !important; position: relative; }
+.foot-bottom::before { content: ""; position: absolute; top: 0; left: 5rem; right: 5rem;
+  border-top: .1rem solid rgba(var(--color-foreground), .14); }
+@media screen and (max-width: 749px) { .foot-bottom::before { left: 1.5rem; right: 1.5rem; } }
+
+/* Menu mobile : invisible (et non focusable) quand fermé */
+.mob-drawer { visibility: hidden; transition: transform .35s cubic-bezier(.32,0,.06,1), visibility 0s .35s; }
+.mob-drawer.on { visibility: visible; transition: transform .35s cubic-bezier(.32,0,.06,1); }
+
+/* Focus clavier visible */
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: .2rem solid currentColor; outline-offset: .3rem; }
+/* En mobile, le sous-titre masquerait la photo : on le garde pour le desktop */
+@media screen and (max-width: 749px) { .banner__sub { display: none; } }
+/* Mobile : le bloc texte passe en bas pour laisser le visage visible */
+@media screen and (max-width: 749px) {
+  .banner__content { align-items: flex-end !important; }
+  .banner__box { margin-bottom: 0; }
+}
+/* Desktop : photo élargie, corps entier visible, texte sur la zone sombre à gauche */
+@media screen and (min-width: 750px) { .banner__media img { object-position: 72% 50%; } }
+
+/* ===== Touches de rose (inspirées de son feed : cerises, cœur rose, Hello Kitty, "/ episode /") ===== */
+:root {
+  --rose: 235,169,188;       /* #EBA9BC — sur fonds sombres */
+  --rose-soft: 248,211,222;  /* #F8D3DE — pastilles, fonds clairs */
+  --rose-deep: 184,70,108;   /* #B8466C — texte et boutons sur crème */
+}
+.kicker { margin: 0 0 1rem; font-size: 1.3rem; letter-spacing: .14em; text-transform: lowercase;
+  font-style: italic; color: rgb(var(--rose-deep)); }
+.kicker--on-dark { color: rgb(var(--rose)); margin-bottom: 1.4rem; }
+.title-wrapper-with-link { align-items: flex-end; }
+.title-wrapper-with-link .title { margin: 0; }
+
+/* badge "Nouveau" et économie du pack */
+.badge.color-scheme-5 { background: rgb(var(--rose-soft)); color: rgb(var(--rose-deep));
+  border-color: transparent; font-weight: 600; letter-spacing: .06em; }
+.price-save { background: rgb(var(--rose-soft)); color: rgb(var(--rose-deep)); font-weight: 600; }
+
+/* hero : survol rose */
+.banner__buttons .hero-cta:hover { background: rgb(var(--rose-soft)); color: #241A14; }
+
+/* Mon histoire */
+#histoire em.rose { font-style: normal; color: rgb(var(--rose)); }
+#histoire .story-cta { box-shadow: 0 0 0 .1rem rgb(var(--rose)); color: rgb(var(--rose)); }
+#histoire .story-cta:hover { background: rgb(var(--rose)); color: #241A14; }
+
+/* liens et menus : soulignement rose au survol */
+.header__menu-item:hover { border-color: rgb(var(--rose-deep)); }
+.card__heading a:hover, .underlined-link:hover { text-decoration-color: rgb(var(--rose-deep)); }
+.mob-drawer nav a:hover, .mob-foot a:hover { color: rgb(var(--rose-deep)); }
+
+/* FAQ : le "+" en rose */
+.faq-item summary::after { color: rgb(var(--rose-deep)); }
+
+/* newsletter */
+.newsletter-form__button { background: rgb(var(--rose-deep)) !important; color: #FBF7F1 !important; border: 0 !important; }
+.newsletter-form__button:hover { background: #9E3A5B !important; }
+.newsletter-form__field-wrapper .field__input:focus { border-color: rgb(var(--rose-deep)); outline: none; }
+
+/* ===== Direction "sombre + girly" ===== */
+:root {
+  --ink: 44,36,40;          /* #2C2428 fond principal, noir légèrement rosé */
+  --ink-2: 56,47,52;        /* #382F34 footer, surfaces */
+  --rose: 242,167,195;      /* #F2A7C3 rose bonbon, accent sur fond sombre */
+  --rose-soft: 246,205,219; /* #F6CDDB bloc histoire, pastilles */
+  --rose-deep: 168,51,94;   /* #A8335E texte rose sur fond clair */
+  --font-girly: 'Instrument Serif', 'Times New Roman', serif;
+}
+html, body { background: rgb(var(--ink)); }
+em.girly { font-family: var(--font-girly); font-style: italic; font-weight: 400;
+  color: rgb(var(--rose)); letter-spacing: 0; }
+.banner__heading em.girly { font-size: 1.08em; }
+.title em.girly, #histoire h2 em.girly { font-size: 1.12em; }
+
+/* annonce : bande rose, cerise de sa bio */
+.announcement-bar { background: rgb(var(--rose)) !important; color: rgb(var(--ink)) !important; }
+.announcement-bar__message { display: flex; align-items: center; justify-content: center; gap: .8rem; color: rgb(var(--ink)); font-weight: 500; }
+.cherry { flex: 0 0 auto; color: rgb(var(--rose-deep)); }
+
+/* hero : dégradé fondu dans le fond de page */
+.banner__media::after {
+  background:
+    linear-gradient(to top, rgba(44,36,40,1) 0%, rgba(44,36,40,.7) 22%, rgba(44,36,40,.2) 48%, rgba(44,36,40,0) 70%),
+    linear-gradient(to right, rgba(44,36,40,.85) 0%, rgba(44,36,40,.45) 34%, rgba(44,36,40,0) 62%) !important;
+}
+@media screen and (max-width: 749px) {
+  .banner__media::after { background: linear-gradient(to top, rgba(44,36,40,1) 0%, rgba(44,36,40,.85) 30%, rgba(44,36,40,.2) 62%, rgba(44,36,40,0) 85%) !important; }
+  .banner__box { background: none !important; backdrop-filter: none; padding: 0 0 .8rem !important; }
+}
+.banner__buttons .hero-cta { background: rgb(var(--rose)); color: rgb(var(--ink)); border-radius: 4rem; }
+.banner__buttons .hero-cta:hover { background: rgb(var(--rose-soft)); color: rgb(var(--ink)); }
+.kicker, .kicker--on-dark { color: rgb(var(--rose)); }
+
+/* boutons et pastilles arrondis */
+.button { border-radius: 4rem; }
+.button::before, .button::after { border-radius: 4rem; }
+
+/* cartes : coins doux */
+.card__inner { border-radius: 1.4rem; }
+.badge.color-scheme-5 { background: rgb(var(--rose)); color: rgb(var(--ink)); }
+.price-save { background: rgb(var(--rose)); color: rgb(var(--ink)); }
+.price-item--regular { color: rgb(245,236,239); }
+.card__heading a, .card__heading { color: rgb(245,236,239); }
+
+/* Mon histoire : le bloc girly de la page */
+#histoire .color-scheme-3 {
+  background: rgb(var(--rose-soft)) !important; color: rgba(var(--ink), .78) !important;
+  border-radius: 2rem; --color-foreground: 44,36,40;
+}
+#histoire .color-scheme-3 h2 { color: rgb(var(--ink)) !important; }
+#histoire h2 em.girly { color: rgb(var(--rose-deep)); }
+#histoire em.rose { color: rgb(var(--rose-deep)); font-family: var(--font-girly); font-style: italic; font-size: 1.15em; }
+#histoire .story-cta { background: rgb(var(--ink)); color: rgb(var(--rose-soft)); box-shadow: none; }
+#histoire .story-cta:hover { background: rgb(var(--rose-deep)); color: #fff; }
+
+/* FAQ */
+.faq-item summary::after { color: rgb(var(--rose)); }
+.faq-item summary h3 { color: rgb(245,236,239); }
+
+/* liens */
+.header__menu-item:hover { border-color: rgb(var(--rose)); }
+.mob-drawer nav a:hover, .mob-foot a:hover { color: rgb(var(--rose)); }
+.footer-block__details-content .list-menu__item--link:hover { color: rgb(var(--rose)); text-decoration: none; }
+
+/* newsletter : un seul bloc arrondi */
+.newsletter-form__field-wrapper { border-radius: 4rem; overflow: hidden; border: .1rem solid rgba(245,236,239,.25); }
+.newsletter-form__field-wrapper .field__input { background: transparent; border: 0; color: rgb(245,236,239); padding-left: 2rem; }
+.newsletter-form__field-wrapper .field__input:focus { border: 0; }
+.newsletter-form__field-wrapper .field::before, .newsletter-form__field-wrapper .field::after { display: none; }
+.newsletter-form__field-wrapper .field__label { color: rgba(245,236,239,.6); left: 2rem; }
+.newsletter-form__button { background: rgb(var(--rose)) !important; color: rgb(var(--ink)) !important; border-radius: 0 4rem 4rem 0 !important; }
+.newsletter-form__button:hover { background: rgb(var(--rose-soft)) !important; }
+.newsletter-form__button::before, .newsletter-form__button::after { display: none; }
+.card__inner { box-shadow: inset 0 0 0 .1rem rgba(245,236,239,.08); }
+.card__inner .card__media { border-radius: 1.4rem; overflow: hidden; }
+@media screen and (max-width: 749px) {
+  .kicker--on-dark, .announcement-bar .cherry { display: none; }
+  .banner__media::after { background: linear-gradient(to top, rgba(44,36,40,1) 0%, rgba(44,36,40,.92) 24%, rgba(44,36,40,.55) 42%, rgba(44,36,40,0) 62%) !important; }
+  .badge { top: auto; bottom: 3.6rem; right: 1rem; font-size: .9rem; padding: .3rem 1rem; }
+}
+/* Dawn met l'overlay à opacity:0 par défaut : on l'active pour fondre la photo dans le fond */
+.banner__media::after { opacity: 1 !important; z-index: 1; }
+@media screen and (min-width: 750px) {
+  .banner__media::after {
+    background:
+      linear-gradient(to top, rgba(44,36,40,1) 0%, rgba(44,36,40,.55) 8%, rgba(44,36,40,0) 22%),
+      linear-gradient(to right, rgba(44,36,40,.9) 0%, rgba(44,36,40,.5) 34%, rgba(44,36,40,0) 58%) !important;
+  }
+}
