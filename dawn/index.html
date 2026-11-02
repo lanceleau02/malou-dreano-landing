@@ -228,6 +228,9 @@
       <div class="announcement-bar__message h5 page-width">Livraison par email — PDF disponible immédiatement après l'achat</div>
     </div>
     <header class="header page-width header--middle-left">
+      <button class="mobile-menu-btn" id="mob-open" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mob-drawer">
+        <span></span><span></span><span></span>
+      </button>
       <h1 class="header__heading">
         <a href="#" class="header__heading-link">
           <span class="h2">Malou Dreano</span>
@@ -244,12 +247,32 @@
       <div class="header__icons">
         <a href="#" class="header__icon header__icon--cart link focus-inset">
           <span class="visually-hidden">Panier</span>
-          <svg class="icon icon-cart" viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 12h18l-1.6 20H12.6L11 12Z"/><path d="M16 12a4 4 0 0 1 8 0"/></svg>
-          <span class="cart-count-bubble"><span aria-hidden="true">0</span></span>
+          <svg class="icon icon-cart" viewBox="0 0 24 24" width="22" height="22" fill="none"
+               stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 8h14l-1 11.4a1.4 1.4 0 0 1-1.4 1.3H7.4A1.4 1.4 0 0 1 6 19.4L5 8Z"/>
+            <path d="M9 8V6.4a3 3 0 0 1 6 0V8"/>
+          </svg>
         </a>
       </div>
     </header>
   </div>
+
+  <div class="mob-scrim" id="mob-scrim"></div>
+  <aside class="mob-drawer" id="mob-drawer" aria-hidden="true" aria-label="Menu">
+    <div class="mob-head">
+      <span>Menu</span>
+      <button class="mob-close" id="mob-close" aria-label="Fermer">&times;</button>
+    </div>
+    <nav>
+      <a href="#programmes">Programmes</a>
+      <a href="#histoire">Mon histoire</a>
+      <a href="#faq">Questions</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="mob-foot">
+      <a href="https://www.instagram.com/mldreano/" target="_blank" rel="noopener">@mldreano</a>
+    </div>
+  </aside>
 
   <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
     <section class="shopify-section section">
@@ -257,7 +280,7 @@
         <div class="banner__media media">
           <picture>
             <source media="(max-width: 749px)" srcset="assets/banner-mobile.jpg?v=10">
-            <img src="assets/banner-desktop.jpg?v=10" alt="Malou Dreano à la salle" width="2400" height="1200" loading="eager">
+            <img src="assets/banner-desktop.jpg?v=10" alt="Malou Dreano à la salle" width="2400" height="1600" loading="eager">
           </picture>
         </div>
         <div class="banner__content banner__content--bottom-left page-width">
@@ -423,9 +446,9 @@
       </div>
     </section>
 
-    <section id="faq" class="shopify-section section">
+    <section id="faq" class="shopify-section section section-title-faq">
       <div class="page-width">
-        <h2 class="title inline-richtext h2" style="margin-bottom:2.4rem">Questions</h2>
+        <h2 class="title inline-richtext h2" style="margin:0 0 3.2rem">Questions</h2>
         <div class="grid grid--2-col-desktop">
           <div class="grid__item"><h3 class="h5">Comment je reçois le programme ?</h3>
             <p>Par email, juste après le paiement. Tu télécharges le PDF autant de fois que tu veux, sans limite de temps.</p></div>
@@ -442,24 +465,24 @@
 
   <footer class="footer color-scheme-2 gradient section-footer-padding">
     <div class="footer__content-top page-width">
-      <div class="footer__blocks-wrapper grid grid--4-col-desktop">
-        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Malou Dreano</h2>
+      <div class="footer__blocks-wrapper">
+        <div class="foot-item"><h2 class="footer-block__heading h4">Malou Dreano</h2>
           <div class="footer-block__details-content rte"><p>Programmes d'entraînement et guides nutrition, écrits pour tenir sur la durée.</p></div>
         </div>
-        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Boutique</h2>
+        <div class="foot-item"><h2 class="footer-block__heading h4">Boutique</h2>
           <ul class="footer-block__details-content list-unstyled">
             <li><a href="#programmes" class="link link--text list-menu__item list-menu__item--link">Les programmes</a></li>
             <li><a href="#faq" class="link link--text list-menu__item list-menu__item--link">Questions</a></li>
             <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Suivi de commande</a></li>
           </ul>
         </div>
-        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Suivre</h2>
+        <div class="foot-item"><h2 class="footer-block__heading h4">Suivre</h2>
           <ul class="footer-block__details-content list-unstyled">
             <li><a href="https://www.instagram.com/mldreano/" class="link link--text list-menu__item list-menu__item--link">Instagram</a></li>
             <li><a href="https://linktr.ee/mldreano" class="link link--text list-menu__item list-menu__item--link">Linktree</a></li>
           </ul>
         </div>
-        <div class="foot-item grid__item">
+        <div class="foot-item">
           <h2 class="footer-block__heading h4">La newsletter</h2>
           <form method="post" action="#" class="newsletter-form">
             <div class="newsletter-form__field-wrapper">
@@ -474,23 +497,37 @@
       </div>
     </div>
     <div class="footer__content-bottom">
-      <div class="footer__content-bottom-wrapper page-width">
-        <div class="footer__copyright caption">
-          <small class="copyright__content">&copy; 2026, Malou Dreano</small>
+      <div class="page-width foot-bottom">
+        <small class="copyright__content">&copy; 2026, Malou Dreano — Tous droits réservés</small>
+        <div class="pay-row" aria-label="Moyens de paiement">
+          <svg viewBox="0 0 38 24" width="38" height="24" aria-label="Visa" role="img"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="9" text-anchor="middle" fill="#1a1f71" font-family="Arial" font-weight="bold">VISA</text></svg>
+          <svg viewBox="0 0 38 24" width="38" height="24" aria-label="Mastercard" role="img"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><circle cx="15" cy="12" r="6" fill="#eb001b" opacity=".85"/><circle cx="23" cy="12" r="6" fill="#f79e1b" opacity=".85"/></svg>
+          <svg viewBox="0 0 38 24" width="38" height="24" aria-label="PayPal" role="img"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="7.5" text-anchor="middle" fill="#003087" font-family="Arial" font-weight="bold">PayPal</text></svg>
         </div>
-        <ul class="list list-payment" role="list">
-          <li class="list-payment__item"><span class="visually-hidden">Visa</span>
-            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="8" text-anchor="middle" fill="#1a1f71" font-family="Arial" font-weight="bold">VISA</text></svg>
-          </li>
-          <li class="list-payment__item"><span class="visually-hidden">Mastercard</span>
-            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><circle cx="15" cy="12" r="6" fill="#eb001b" opacity=".8"/><circle cx="23" cy="12" r="6" fill="#f79e1b" opacity=".8"/></svg>
-          </li>
-          <li class="list-payment__item"><span class="visually-hidden">PayPal</span>
-            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="7" text-anchor="middle" fill="#003087" font-family="Arial" font-weight="bold">PayPal</text></svg>
-          </li>
-        </ul>
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      var drawer = document.getElementById('mob-drawer');
+      var scrim = document.getElementById('mob-scrim');
+      var open = document.getElementById('mob-open');
+      var close = document.getElementById('mob-close');
+      function set(on) {
+        drawer.classList.toggle('on', on);
+        scrim.classList.toggle('on', on);
+        drawer.setAttribute('aria-hidden', String(!on));
+        open.setAttribute('aria-expanded', String(on));
+        document.body.style.overflow = on ? 'hidden' : '';
+      }
+      open.addEventListener('click', function () { set(true); });
+      close.addEventListener('click', function () { set(false); });
+      scrim.addEventListener('click', function () { set(false); });
+      Array.prototype.forEach.call(drawer.querySelectorAll('a'), function (a) {
+        a.addEventListener('click', function () { set(false); });
+      });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+    })();
+  </script>
 </body>
 </html>

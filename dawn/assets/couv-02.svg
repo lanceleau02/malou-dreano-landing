@@ -2,9 +2,9 @@
 <rect width="900" height="1200" fill="#8A6446"/>
 <rect x="54" y="0" width="1" height="1200" fill="#FBF7F1" opacity=".35"/>
 <text x="96" y="150" fill="#E3D4BF" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="6">PROGRAMME · 02</text>
-<text x="96" y="660" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6">NUTRI</text>
-<text x="96" y="782" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6">TION</text>
-<text x="96" y="904" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6"></text>
+<text x="96" y="660" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="78" font-weight="bold" letter-spacing="-6">NUTRITION</text>
+<text x="96" y="782" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="78" font-weight="bold" letter-spacing="-6"></text>
+<text x="96" y="904" fill="#FBF7F1" font-family="Helvetica,Arial,sans-serif" font-size="78" font-weight="bold" letter-spacing="-6"></text>
 <line x1="96" y1="1030" x2="804" y2="1030" stroke="#FBF7F1" stroke-opacity=".25"/>
 <text x="96" y="1090" fill="#E3D4BF" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="5">MALOU DREANO</text>
 <text x="804" y="1090" fill="#E3D4BF" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="5" text-anchor="end">BIENTÔT</text>
