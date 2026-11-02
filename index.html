@@ -148,11 +148,11 @@
   /* ---------- bandeau specs ---------- */
   .specs{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:clamp(30px,5vw,60px)}
   .specs .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-top:14px;padding-bottom:14px}
-  .specs div{
+  .specs .wrap > div{
     font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2);
     padding-left:clamp(10px,2vw,22px);border-left:1px solid var(--line);
   }
-  .specs div:first-child{padding-left:0;border-left:0}
+  .specs .wrap > div:first-child{padding-left:0;border-left:0}
 
   /* ---------- titres de section ---------- */
   .sechead{display:flex;align-items:baseline;gap:16px;margin:0 0 clamp(26px,4vw,44px)}
@@ -306,8 +306,8 @@
     :root{--g:18px}
     .hero h1{font-size:clamp(30px,10.2vw,44px)}
     .specs .wrap{grid-template-columns:1fr;gap:8px;padding-top:12px;padding-bottom:12px}
-    .specs div{border-left:0;padding-left:0;border-top:1px solid var(--line-soft);padding-top:8px}
-    .specs div:first-child{border-top:0;padding-top:0}
+    .specs .wrap > div{border-left:0;padding-left:0;border-top:1px solid var(--line-soft);padding-top:8px}
+    .specs .wrap > div:first-child{border-top:0;padding-top:0}
     .bag{display:none}
     .buy .wrap{gap:22px}
     .btn{width:100%;gap:20px}
