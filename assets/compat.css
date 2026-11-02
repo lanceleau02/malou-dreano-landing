@@ -264,7 +264,19 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: .2rem so
   .banner__box { margin-bottom: 0; }
 }
 /* Desktop : photo élargie, corps entier visible, texte sur la zone sombre à gauche */
-@media screen and (min-width: 750px) { .banner__media img { object-position: 72% 50%; } }
+/* Tablette : cadrage inchangé (pas de décalage, la bannière y est trop étroite) */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .banner__media img { object-position: 72% 50%; }
+}
+@media screen and (min-width: 990px) {
+  /* Air au-dessus de la tête : la photo descend de --hero-photo-offset (valeur à ajuster ici).
+     La bande libérée en haut prend la couleur du fond de page, et le haut de la photo s'y fond. */
+  .banner__media { --hero-photo-offset: 4rem; background-color: rgb(var(--ink)); }
+  .banner__media img {
+    object-position: 72% var(--hero-photo-offset);
+    mask-image: linear-gradient(to bottom, transparent var(--hero-photo-offset), #000 calc(var(--hero-photo-offset) + 5rem));
+  }
+}
 
 /* ===== Touches de rose (inspirées de son feed : cerises, cœur rose, Hello Kitty, "/ episode /") ===== */
 :root {
