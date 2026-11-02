@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+<rect width="900" height="1200" fill="#EFE6D8"/>
+<rect x="54" y="0" width="1" height="1200" fill="#241A14" opacity=".35"/>
+<text x="96" y="150" fill="#8A6446" font-family="Helvetica,Arial,sans-serif" font-size="21" letter-spacing="6">PROGRAMME · 03</text>
+<text x="96" y="660" fill="#241A14" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6">HAUT</text>
+<text x="96" y="782" fill="#241A14" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6">DU</text>
+<text x="96" y="904" fill="#241A14" font-family="Helvetica,Arial,sans-serif" font-size="126" font-weight="bold" letter-spacing="-6">CORPS</text>
+<line x1="96" y1="1030" x2="804" y2="1030" stroke="#241A14" stroke-opacity=".25"/>
+<text x="96" y="1090" fill="#8A6446" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="5">MALOU DREANO</text>
+<text x="804" y="1090" fill="#8A6446" font-family="Helvetica,Arial,sans-serif" font-size="22" letter-spacing="5" text-anchor="end">08 SEMAINES</text>
+</svg>

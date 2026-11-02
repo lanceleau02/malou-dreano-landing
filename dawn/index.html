@@ -1,0 +1,495 @@
+<!doctype html>
+<html class="no-js" lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Malou Dreano — Programmes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/section-image-banner.css"><link rel="stylesheet" href="assets/component-card.css"><link rel="stylesheet" href="assets/component-price.css"><link rel="stylesheet" href="assets/component-slider.css"><link rel="stylesheet" href="assets/section-footer.css"><link rel="stylesheet" href="assets/component-newsletter.css"><link rel="stylesheet" href="assets/component-list-payment.css"><link rel="stylesheet" href="assets/component-list-social.css"><link rel="stylesheet" href="assets/component-menu-drawer.css"><link rel="stylesheet" href="assets/component-list-menu.css"><link rel="stylesheet" href="assets/component-search.css"><link rel="stylesheet" href="assets/component-modal-video.css"><link rel="stylesheet" href="assets/component-deferred-media.css"><link rel="stylesheet" href="assets/section-rich-text.css">
+  <link rel="stylesheet" href="assets/compat.css">
+  <style>
+    .color-scheme-1 {
+      --color-background: 251,247,241;
+      --gradient-background: rgb(251,247,241);
+      --color-foreground: 36,26,20;
+      --color-background-contrast: 251,247,241;
+      --color-shadow: 36,26,20;
+      --color-button: 36,26,20;
+      --color-button-text: 251,247,241;
+      --color-secondary-button: 251,247,241;
+      --color-secondary-button-text: 36,26,20;
+      --color-link: 36,26,20;
+      --color-badge-foreground: 36,26,20;
+      --color-badge-background: 251,247,241;
+      --color-badge-border: 36,26,20;
+      --payment-terms-background-color: rgb(251,247,241);
+      color: rgba(36,26,20, 0.75);
+      background-color: rgb(251,247,241);
+    }
+    .color-scheme-1 .h0, .color-scheme-1 .h1, .color-scheme-1 .h2, .color-scheme-1 h1,
+    .color-scheme-1 h2, .color-scheme-1 h3 { color: rgb(36,26,20); }
+
+    .color-scheme-2 {
+      --color-background: 239,230,216;
+      --gradient-background: rgb(239,230,216);
+      --color-foreground: 36,26,20;
+      --color-background-contrast: 239,230,216;
+      --color-shadow: 36,26,20;
+      --color-button: 36,26,20;
+      --color-button-text: 239,230,216;
+      --color-secondary-button: 239,230,216;
+      --color-secondary-button-text: 36,26,20;
+      --color-link: 36,26,20;
+      --color-badge-foreground: 36,26,20;
+      --color-badge-background: 239,230,216;
+      --color-badge-border: 36,26,20;
+      --payment-terms-background-color: rgb(239,230,216);
+      color: rgba(36,26,20, 0.75);
+      background-color: rgb(239,230,216);
+    }
+    .color-scheme-2 .h0, .color-scheme-2 .h1, .color-scheme-2 .h2, .color-scheme-2 h1,
+    .color-scheme-2 h2, .color-scheme-2 h3 { color: rgb(36,26,20); }
+
+    .color-scheme-3 {
+      --color-background: 36,26,20;
+      --gradient-background: rgb(36,26,20);
+      --color-foreground: 243,236,225;
+      --color-background-contrast: 36,26,20;
+      --color-shadow: 0,0,0;
+      --color-button: 243,236,225;
+      --color-button-text: 36,26,20;
+      --color-secondary-button: 36,26,20;
+      --color-secondary-button-text: 201,169,139;
+      --color-link: 201,169,139;
+      --color-badge-foreground: 243,236,225;
+      --color-badge-background: 36,26,20;
+      --color-badge-border: 243,236,225;
+      --payment-terms-background-color: rgb(36,26,20);
+      color: rgba(243,236,225, 0.75);
+      background-color: rgb(36,26,20);
+    }
+    .color-scheme-3 .h0, .color-scheme-3 .h1, .color-scheme-3 .h2, .color-scheme-3 h1,
+    .color-scheme-3 h2, .color-scheme-3 h3 { color: rgb(243,236,225); }
+
+    .color-scheme-4 {
+      --color-background: 138,100,70;
+      --gradient-background: rgb(138,100,70);
+      --color-foreground: 251,247,241;
+      --color-background-contrast: 138,100,70;
+      --color-shadow: 36,26,20;
+      --color-button: 251,247,241;
+      --color-button-text: 138,100,70;
+      --color-secondary-button: 138,100,70;
+      --color-secondary-button-text: 243,236,225;
+      --color-link: 243,236,225;
+      --color-badge-foreground: 251,247,241;
+      --color-badge-background: 138,100,70;
+      --color-badge-border: 251,247,241;
+      --payment-terms-background-color: rgb(138,100,70);
+      color: rgba(251,247,241, 0.75);
+      background-color: rgb(138,100,70);
+    }
+    .color-scheme-4 .h0, .color-scheme-4 .h1, .color-scheme-4 .h2, .color-scheme-4 h1,
+    .color-scheme-4 h2, .color-scheme-4 h3 { color: rgb(251,247,241); }
+
+    .color-scheme-5 {
+      --color-background: 227,212,191;
+      --gradient-background: rgb(227,212,191);
+      --color-foreground: 36,26,20;
+      --color-background-contrast: 227,212,191;
+      --color-shadow: 36,26,20;
+      --color-button: 158,59,31;
+      --color-button-text: 251,247,241;
+      --color-secondary-button: 227,212,191;
+      --color-secondary-button-text: 36,26,20;
+      --color-link: 36,26,20;
+      --color-badge-foreground: 36,26,20;
+      --color-badge-background: 227,212,191;
+      --color-badge-border: 36,26,20;
+      --payment-terms-background-color: rgb(227,212,191);
+      color: rgba(36,26,20, 0.75);
+      background-color: rgb(227,212,191);
+    }
+    .color-scheme-5 .h0, .color-scheme-5 .h1, .color-scheme-5 .h2, .color-scheme-5 h1,
+    .color-scheme-5 h2, .color-scheme-5 h3 { color: rgb(36,26,20); }
+
+    :root {
+      --font-body-family: 'Assistant', 'Helvetica Neue', Arial, sans-serif;
+      --font-body-style: normal;
+      --font-body-weight: 400;
+      --font-body-weight-bold: 700;
+      --font-heading-family: 'Assistant', 'Helvetica Neue', Arial, sans-serif;
+      --font-heading-style: normal;
+      --font-heading-weight: 400;
+      --font-body-scale: 1.0;
+      --font-heading-scale: 1.0;
+      --media-padding: 0px;
+      --media-border-opacity: 0.05;
+      --media-border-width: 1px;
+      --media-radius: 0px;
+      --media-shadow-opacity: 0;
+      --media-shadow-horizontal-offset: 0px;
+      --media-shadow-vertical-offset: 0px;
+      --media-shadow-blur-radius: 0px;
+      --media-shadow-visible: 0;
+      --page-width: 120rem;
+      --page-width-margin: 0rem;
+      --product-card-image-padding: 0rem;
+      --product-card-corner-radius: 0rem;
+      --product-card-text-alignment: left;
+      --product-card-border-width: 0rem;
+      --product-card-border-opacity: 0.1;
+      --product-card-shadow-opacity: 0;
+      --product-card-shadow-visible: 0;
+      --product-card-shadow-horizontal-offset: 0rem;
+      --product-card-shadow-vertical-offset: 0rem;
+      --product-card-shadow-blur-radius: 0rem;
+      --collection-card-image-padding: 0rem;
+      --collection-card-corner-radius: 0rem;
+      --collection-card-text-alignment: left;
+      --collection-card-border-width: 0rem;
+      --collection-card-border-opacity: 0.1;
+      --collection-card-shadow-opacity: 0;
+      --collection-card-shadow-visible: 0;
+      --collection-card-shadow-horizontal-offset: 0rem;
+      --collection-card-shadow-vertical-offset: 0rem;
+      --collection-card-shadow-blur-radius: 0rem;
+      --blog-card-image-padding: 0rem;
+      --blog-card-corner-radius: 0rem;
+      --blog-card-text-alignment: left;
+      --blog-card-border-width: 0rem;
+      --blog-card-border-opacity: 0.1;
+      --blog-card-shadow-opacity: 0;
+      --blog-card-shadow-visible: 0;
+      --blog-card-shadow-horizontal-offset: 0rem;
+      --blog-card-shadow-vertical-offset: 0rem;
+      --blog-card-shadow-blur-radius: 0rem;
+      --badge-corner-radius: 4rem;
+      --popup-border-width: 1px;
+      --popup-border-opacity: 0.1;
+      --popup-corner-radius: 0px;
+      --popup-shadow-opacity: 0.05;
+      --popup-shadow-horizontal-offset: 0px;
+      --popup-shadow-vertical-offset: 4px;
+      --popup-shadow-blur-radius: 5px;
+      --drawer-border-width: 1px;
+      --drawer-border-opacity: 0.1;
+      --drawer-shadow-opacity: 0;
+      --drawer-shadow-horizontal-offset: 0px;
+      --drawer-shadow-vertical-offset: 4px;
+      --drawer-shadow-blur-radius: 5px;
+      --spacing-sections-desktop: 0px;
+      --spacing-sections-mobile: 0px;
+      --grid-desktop-vertical-spacing: 8px;
+      --grid-desktop-horizontal-spacing: 8px;
+      --grid-mobile-vertical-spacing: 4px;
+      --grid-mobile-horizontal-spacing: 4px;
+      --text-boxes-border-opacity: 0.1;
+      --text-boxes-border-width: 0px;
+      --text-boxes-radius: 0px;
+      --text-boxes-shadow-opacity: 0;
+      --text-boxes-shadow-visible: 0;
+      --text-boxes-shadow-horizontal-offset: 0px;
+      --text-boxes-shadow-vertical-offset: 0px;
+      --text-boxes-shadow-blur-radius: 0px;
+      --buttons-radius: 0px;
+      --buttons-radius-outset: 0px;
+      --buttons-border-width: 1px;
+      --buttons-border-opacity: 1;
+      --buttons-shadow-opacity: 0;
+      --buttons-shadow-visible: 0;
+      --buttons-shadow-horizontal-offset: 0px;
+      --buttons-shadow-vertical-offset: 0px;
+      --buttons-shadow-blur-radius: 0px;
+      --buttons-border-offset: 0px;
+      --inputs-radius: 0px;
+      --inputs-border-width: 1px;
+      --inputs-border-opacity: 0.55;
+      --inputs-shadow-opacity: 0;
+      --inputs-shadow-horizontal-offset: 0px;
+      --inputs-shadow-vertical-offset: 0px;
+      --inputs-shadow-blur-radius: 0px;
+      --inputs-radius-outset: 0px;
+      --variant-pills-radius: 40px;
+      --variant-pills-border-width: 1px;
+      --variant-pills-border-opacity: 0.55;
+      --variant-pills-shadow-opacity: 0;
+      --variant-pills-shadow-horizontal-offset: 0px;
+      --variant-pills-shadow-vertical-offset: 0px;
+      --variant-pills-shadow-blur-radius: 0px;
+    }</style>
+</head>
+<body class="gradient color-scheme-1">
+
+  <div class="section-header">
+    <div class="announcement-bar color-scheme-3 gradient" role="region" aria-label="Annonce">
+      <div class="announcement-bar__message h5 page-width">Livraison par email — PDF disponible immédiatement après l'achat</div>
+    </div>
+    <header class="header page-width header--middle-left">
+      <h1 class="header__heading">
+        <a href="#" class="header__heading-link">
+          <span class="h2">Malou Dreano</span>
+        </a>
+      </h1>
+      <nav class="header__inline-menu">
+        <ul class="list-menu list-menu--inline" role="list">
+          <li><a href="#programmes" class="header__menu-item list-menu__item link link--text">Programmes</a></li>
+          <li><a href="#histoire" class="header__menu-item list-menu__item link link--text">Mon histoire</a></li>
+          <li><a href="#faq" class="header__menu-item list-menu__item link link--text">Questions</a></li>
+          <li><a href="#" class="header__menu-item list-menu__item link link--text">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header__icons">
+        <a href="#" class="header__icon header__icon--cart link focus-inset">
+          <span class="visually-hidden">Panier</span>
+          <svg class="icon icon-cart" viewBox="0 0 40 40" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M11 12h18l-1.6 20H12.6L11 12Z"/><path d="M16 12a4 4 0 0 1 8 0"/></svg>
+          <span class="cart-count-bubble"><span aria-hidden="true">0</span></span>
+        </a>
+      </div>
+    </header>
+  </div>
+
+  <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <section class="shopify-section section">
+      <div id="Banner-1" class="banner banner--content-align-center banner--content-align-mobile-center banner--large">
+        <div class="banner__media media">
+          <img src="assets/banniere.svg?v=8" alt="" width="2000" height="1100" loading="eager">
+        </div>
+        <div class="banner__content banner__content--bottom-center page-width">
+          <div class="banner__box content-container content-container--full-width-mobile color-scheme-3 gradient">
+            <h2 class="banner__heading inline-richtext h0">Comprendre son corps<br>avant de le travailler</h2>
+            <div class="banner__buttons">
+              <a href="#programmes" class="button button--secondary">Voir les programmes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programmes" class="shopify-section section">
+      <div class="page-width section-collection">
+        <div class="title-wrapper-with-link title-wrapper--self-padded-mobile">
+          <h2 class="title inline-richtext h2">Les programmes</h2>
+          <a href="#" class="link underlined-link large-up-hide">Tout voir</a>
+        </div>
+        <ul class="grid product-grid grid--4-col-desktop grid--2-col-tablet-down" role="list">
+            <li class="grid__item">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="card card--product card--media" tabindex="-1">
+                  <div class="card__inner ratio" style="--ratio-percent:133.333%">
+                    <div class="card__media">
+                      <div class="media media--transparent">
+                        <img src="assets/couv-01.svg?v=8" alt="Bas du corps — 8 semaines" class="motion-reduce" width="900" height="1200">
+                      </div>
+                    </div>
+                    <span class="badge badge--bottom-left color-scheme-5">Nouveau</span>
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h5">
+                        <a href="#" class="full-unstyled-link">Bas du corps — 8 semaines</a>
+                      </h3>
+                      <div class="card-information">
+                        <div class="caption-with-letter-spacing light">Programme PDF</div>
+                        <div class="price">
+                          <div class="price__container">
+                            <div class="price__regular">
+                              <span class="visually-hidden">Prix régulier</span>
+                              <span class="price-item price-item--regular">24,00 €</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid__item">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="card card--product card--media" tabindex="-1">
+                  <div class="card__inner ratio" style="--ratio-percent:133.333%">
+                    <div class="card__media">
+                      <div class="media media--transparent">
+                        <img src="assets/couv-02.svg?v=8" alt="Nutrition — guide complet" class="motion-reduce" width="900" height="1200">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h5">
+                        <a href="#" class="full-unstyled-link">Nutrition — guide complet</a>
+                      </h3>
+                      <div class="card-information">
+                        <div class="caption-with-letter-spacing light">Programme PDF</div>
+                        <div class="price">
+                          <div class="price__container">
+                            <div class="price__regular">
+                              <span class="visually-hidden">Prix régulier</span>
+                              <span class="price-item price-item--regular">19,00 €</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid__item">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="card card--product card--media" tabindex="-1">
+                  <div class="card__inner ratio" style="--ratio-percent:133.333%">
+                    <div class="card__media">
+                      <div class="media media--transparent">
+                        <img src="assets/couv-03.svg?v=8" alt="Haut du corps — 8 semaines" class="motion-reduce" width="900" height="1200">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h5">
+                        <a href="#" class="full-unstyled-link">Haut du corps — 8 semaines</a>
+                      </h3>
+                      <div class="card-information">
+                        <div class="caption-with-letter-spacing light">Programme PDF</div>
+                        <div class="price">
+                          <div class="price__container">
+                            <div class="price__regular">
+                              <span class="visually-hidden">Prix régulier</span>
+                              <span class="price-item price-item--regular">24,00 €</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="grid__item">
+              <div class="card-wrapper product-card-wrapper underline-links-hover">
+                <div class="card card--product card--media" tabindex="-1">
+                  <div class="card__inner ratio" style="--ratio-percent:133.333%">
+                    <div class="card__media">
+                      <div class="media media--transparent">
+                        <img src="assets/couv-04.svg?v=8" alt="Pack complet — les trois" class="motion-reduce" width="900" height="1200">
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="card__content">
+                    <div class="card__information">
+                      <h3 class="card__heading h5">
+                        <a href="#" class="full-unstyled-link">Pack complet — les trois</a>
+                      </h3>
+                      <div class="card-information">
+                        <div class="caption-with-letter-spacing light">Bundle</div>
+                        <div class="price">
+                          <div class="price__container">
+                            <div class="price__regular">
+                              <span class="visually-hidden">Prix régulier</span>
+                              <span class="price-item price-item--regular">49,00 €</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="histoire" class="shopify-section section">
+      <div class="page-width">
+        <div class="rich-text content-container color-scheme-3 gradient">
+          <div class="rich-text__blocks">
+            <h2 class="rich-text__heading rte inline-richtext h1">Mon histoire</h2>
+            <div class="rich-text__text rte">
+              <p>J'ai commencé la salle sans rien comprendre. Je recopiais les séances des autres et je changeais de programme toutes les trois semaines.</p>
+              <p>Ce qui a tout changé n'est pas une séance miracle. C'est d'avoir compris la logique : pourquoi cet exercice, dans cet ordre, à ce moment de la semaine.</p>
+              <p>Aujourd'hui je veux transmettre ça — la structure, pas la motivation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="shopify-section section">
+      <div class="page-width">
+        <h2 class="title inline-richtext h2" style="margin-bottom:2.4rem">Questions</h2>
+        <div class="grid grid--2-col-desktop">
+          <div class="grid__item"><h3 class="h5">Comment je reçois le programme ?</h3>
+            <p>Par email, juste après le paiement. Tu télécharges le PDF autant de fois que tu veux, sans limite de temps.</p></div>
+          <div class="grid__item"><h3 class="h5">Je débute vraiment, c'est pour moi ?</h3>
+            <p>Oui. Chaque exercice est expliqué et accompagné d'une variante plus simple, pour démarrer sans expérience.</p></div>
+          <div class="grid__item"><h3 class="h5">Il faut du matériel ?</h3>
+            <p>Une salle classique suffit. Une version entièrement aux haltères est incluse si tu t'entraînes chez toi.</p></div>
+          <div class="grid__item"><h3 class="h5">Est-ce remboursable ?</h3>
+            <p>Pas une fois le fichier téléchargé, conformément à la réglementation sur les contenus numériques.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer color-scheme-2 gradient section-footer-padding">
+    <div class="footer__content-top page-width">
+      <div class="footer__blocks-wrapper grid grid--4-col-desktop">
+        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Malou Dreano</h2>
+          <div class="footer-block__details-content rte"><p>Programmes d'entraînement et guides nutrition, écrits pour tenir sur la durée.</p></div>
+        </div>
+        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Boutique</h2>
+          <ul class="footer-block__details-content list-unstyled">
+            <li><a href="#programmes" class="link link--text list-menu__item list-menu__item--link">Les programmes</a></li>
+            <li><a href="#faq" class="link link--text list-menu__item list-menu__item--link">Questions</a></li>
+            <li><a href="#" class="link link--text list-menu__item list-menu__item--link">Suivi de commande</a></li>
+          </ul>
+        </div>
+        <div class="foot-item grid__item"><h2 class="footer-block__heading h4">Suivre</h2>
+          <ul class="footer-block__details-content list-unstyled">
+            <li><a href="https://www.instagram.com/mldreano/" class="link link--text list-menu__item list-menu__item--link">Instagram</a></li>
+            <li><a href="https://linktr.ee/mldreano" class="link link--text list-menu__item list-menu__item--link">Linktree</a></li>
+          </ul>
+        </div>
+        <div class="foot-item grid__item">
+          <h2 class="footer-block__heading h4">La newsletter</h2>
+          <form method="post" action="#" class="newsletter-form">
+            <div class="newsletter-form__field-wrapper">
+              <div class="field">
+                <input id="NewsletterForm--footer" type="email" name="contact[email]" class="field__input" value="" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Email" required>
+                <label class="field__label" for="NewsletterForm--footer">Email</label>
+              </div>
+              <button type="submit" class="newsletter-form__button field__button button button--primary" name="commit" aria-label="S'inscrire">S'inscrire</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer__content-bottom">
+      <div class="footer__content-bottom-wrapper page-width">
+        <div class="footer__copyright caption">
+          <small class="copyright__content">&copy; 2026, Malou Dreano</small>
+        </div>
+        <ul class="list list-payment" role="list">
+          <li class="list-payment__item"><span class="visually-hidden">Visa</span>
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="8" text-anchor="middle" fill="#1a1f71" font-family="Arial" font-weight="bold">VISA</text></svg>
+          </li>
+          <li class="list-payment__item"><span class="visually-hidden">Mastercard</span>
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><circle cx="15" cy="12" r="6" fill="#eb001b" opacity=".8"/><circle cx="23" cy="12" r="6" fill="#f79e1b" opacity=".8"/></svg>
+          </li>
+          <li class="list-payment__item"><span class="visually-hidden">PayPal</span>
+            <svg class="icon icon--full-color" viewBox="0 0 38 24" width="38" height="24"><rect width="38" height="24" rx="2" fill="#fff" stroke="#d9d9d9"/><text x="19" y="16" font-size="7" text-anchor="middle" fill="#003087" font-family="Arial" font-weight="bold">PayPal</text></svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+
+/* Reproduit les règles que layout/theme.liquid injecte dans {% style %} et que
+   le CSS statique de Dawn ne contient pas (Dawn est compilé par Shopify). */
+*, *::before, *::after { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: 0.06rem;
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  font-family: var(--font-body-family);
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+}
+@media screen and (min-width: 750px) { body { font-size: 1.6rem; } }
+
+/* Reset des menus que Dawn applique via .list-unstyled */
+.list-menu { margin: 0; padding: 0; list-style: none; }
+.list-menu--inline { display: inline-flex; flex-wrap: wrap; column-gap: 3rem; }
+.header__inline-menu { display: none; }
+@media screen and (min-width: 990px) { .header__inline-menu { display: block; } }
+.cart-count-bubble {
+  position: absolute; bottom: .8rem; left: 2.2rem;
+  background-color: rgb(var(--color-button)); color: rgb(var(--color-button-text));
+  height: 1.7rem; width: 1.7rem; border-radius: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; line-height: 1;
+}
+.header__icon--cart { position: relative; }
+.grid--2-col-desktop { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; row-gap: 2.4rem; }
+@media screen and (max-width: 749px) { .grid--2-col-desktop { grid-template-columns: 1fr; } }
+.section-collection { padding-top: 4.4rem; padding-bottom: 3.6rem; }
+.rich-text.content-container { padding: 5rem 4rem; margin: 0; }
+@media screen and (max-width: 749px) { .rich-text.content-container { padding: 3.6rem 2rem; } }
+.rich-text__heading { margin-bottom: 2.4rem; }
+.rich-text__text p { max-width: 70rem; }
+.section-footer-padding { margin-top: 0; }
+/* Cartes produit : Dawn pilote le ratio via --ratio-percent */
+.card__inner.ratio { position: relative; width: 100%; }
+.card__inner.ratio::before { content: ''; display: block; padding-bottom: var(--ratio-percent, 133.333%); }
+.card__inner.ratio > .card__media { position: absolute; inset: 0; width: 100%; height: 100%; }
+.badge { position: absolute; bottom: 1rem; left: 1rem; width: auto; height: auto;
+         border-radius: 4rem; padding: .4rem 1.2rem; font-size: 1rem; z-index: 2; }
+.card__inner { overflow: hidden; }
+.card__media img, .card__media .media, .media { border-radius: 0 !important; }
+.card__media, .card__media .media { height: 100%; width: 100%; }
+.card__media img, .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card__media .media { position: relative; overflow: hidden; }
+.announcement-bar { display: block; }
+.banner__box { background: transparent !important; padding: 0 !important; max-width: 68rem; }
+.banner__heading { color: #F3ECE1; }
+.page-width { padding-left: 5rem; padding-right: 5rem; }
+@media screen and (max-width: 749px) { .page-width { padding-left: 1.5rem; padding-right: 1.5rem; } }
+.announcement-bar__message { text-align: center; padding: 1rem 0; margin: 0; }
