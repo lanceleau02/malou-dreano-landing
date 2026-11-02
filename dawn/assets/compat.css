@@ -37,7 +37,13 @@ body {
 .grid--2-col-desktop { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; row-gap: 2.4rem; }
 @media screen and (max-width: 749px) { .grid--2-col-desktop { grid-template-columns: 1fr; } }
 .section-collection { padding-top: 4.4rem; padding-bottom: 3.6rem; }
-.rich-text.content-container { padding: 5rem 4rem; margin: 0; }
+.rich-text.content-container {
+  padding: 5rem 4rem !important; margin: 0;
+  height: auto !important; max-height: none !important; overflow: visible !important;
+  display: block !important;
+}
+.rich-text__blocks { max-width: 70rem; }
+.rich-text__text p:last-child { margin-bottom: 0; }
 @media screen and (max-width: 749px) { .rich-text.content-container { padding: 3.6rem 2rem; } }
 .rich-text__heading { margin-bottom: 2.4rem; }
 .rich-text__text p { max-width: 70rem; }
